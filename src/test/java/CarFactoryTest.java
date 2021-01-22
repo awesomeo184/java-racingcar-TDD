@@ -4,7 +4,6 @@ import domain.Car;
 import domain.CarFactory;
 import domain.CarNames;
 import java.util.List;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
