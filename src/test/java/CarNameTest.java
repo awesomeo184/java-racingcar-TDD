@@ -24,11 +24,4 @@ public class CarNameTest {
         assertThat(carNames.getNames().size()).isEqualTo(3);
     }
 
-    @Test
-    @DisplayName("이름이 다섯 자를 초과하는 경우 오류 발생")
-    void checkNameLength() {
-        assertThrows(IllegalArgumentException.class,
-            () -> new CarNames("abcdef, 123456"));
-
-    }
 }
