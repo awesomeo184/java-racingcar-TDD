@@ -1,6 +1,11 @@
 package domain;
 
 public class Car {
+    private static final int MAX_NAME_LENGTH = 5;
+    private static final int MOVABLE_BOUND = 4;
+    private static final int LOWER_BOUND = 1;
+    private static final int UPPER_BOUND = 6;
+
     private final String name;
     private int position = 0;
 
@@ -25,18 +30,20 @@ public class Car {
     }
 
     private void isSoundNameLength(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("[ERROR] 이름은 5자 이하여야 합니다.");
+        if (name.length() > MAX_NAME_LENGTH) {
+            throw new IllegalArgumentException("[ERROR] 이름은 " + MAX_NAME_LENGTH + "자 이하여야 합니다.");
         }
     }
 
     public void move(int number) {
-        if (number > 3) {
+        if (number >= MOVABLE_BOUND) {
             position++;
         }
 
-        if (number < 1 || number > 6) {
-            throw new IllegalArgumentException("[ERROR] 숫자는 1에서 6 사이여야 합니다.");
+        if (number < LOWER_BOUND || number > UPPER_BOUND) {
+            throw new IllegalArgumentException(
+                "[ERROR] 숫자는 " + LOWER_BOUND + "에서 " + UPPER_BOUND + " 사이여야 합니다."
+            );
         }
     }
 
