@@ -49,4 +49,5 @@ public class MoveTest {
             car.move(7);
         }).isInstanceOf(IllegalArgumentException.class);
     }
+
 }

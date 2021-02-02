@@ -1,5 +1,7 @@
 import domain.Car;
+import domain.CarFactory;
 import domain.CarNames;
+import domain.RandomDice;
 import java.util.ArrayList;
 import java.util.List;
 import view.InputView;
@@ -11,8 +13,11 @@ public class Application {
 
         OutputView.printInputCarNameMessage();
         CarNames carNames = new CarNames(InputView.inputCarNames());
-        List<String> names = carNames.getNames();
+        List<Car> cars = CarFactory.makeCars(carNames);
 
+        for (Car car : cars) {
+            car.move(RandomDice.roll());
+        }
 
     }
 }
