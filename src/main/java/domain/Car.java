@@ -10,6 +10,14 @@ public class Car {
         this.name = name;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     private void isBlank(String name) {
         if (name.isBlank()) {
             throw new IllegalArgumentException("[ERROR] 잘못된 이름 형식입니다.");
@@ -22,7 +30,14 @@ public class Car {
         }
     }
 
-    public String getName() {
-        return name;
+    public void move(int number) {
+        if (number > 3) {
+            position++;
+        }
+
+        if (number < 1 || number > 6) {
+            throw new IllegalArgumentException("[ERROR] 숫자는 1에서 6 사이여야 합니다.");
+        }
     }
+
 }
