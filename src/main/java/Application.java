@@ -12,12 +12,14 @@ public class Application {
     public static void main(String[] args) {
 
         OutputView.printInputCarNameMessage();
-        CarNames carNames = new CarNames(InputView.inputCarNames());
+        CarNames carNames = new CarNames(InputView.getInput());
+
+        OutputView.printInputTrial();
+
+
         List<Car> cars = CarFactory.makeCars(carNames);
 
-        for (Car car : cars) {
-            car.move(RandomDice.roll());
-        }
+
 
     }
 }

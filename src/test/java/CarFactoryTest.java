@@ -17,4 +17,12 @@ public class CarFactoryTest {
         assertThat(cars.size()).isEqualTo(3);
     }
 
+    @Test
+    @DisplayName("한 회차를 잘 진행하는가")
+    void runPhase() {
+        CarNames carNames = new CarNames("car1,car2,car3");
+        CarFactory.makeCars(carNames);
+        CarFactory.runPhase();
+    }
+
 }

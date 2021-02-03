@@ -14,4 +14,10 @@ public class CarFactory {
         }
         return cars;
     }
+
+    public static void runPhase() {
+        for (Car car : cars) {
+            car.move(RandomDice.roll());
+        }
+    }
 }
